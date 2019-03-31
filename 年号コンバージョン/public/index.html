@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="img/favicon.ico" href="img/favicon .ico">
+    <script src="https://cdn.jsdelivr.net/jquery/3.1.0/jquery.min.js"></script>
+
+
+
+    <title>年号コンバージョン</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>年号コンバージョン</h1>
+      <p>あなたは明治〇〇年生まれ！？</p>
+    </header>
+
+    <main>
+      <p>あなたの生年月日を入力してください</p>
+
+      <div class="chose">
+        <input class="target" type="date" value="2000-01-01">
+      </div>
+
+
+      <div id="show_result">
+        <p>Conversion!!</p>
+      </div>
+
+
+      <ul>
+        <li class="box">
+          <h2>新年 <span class="result" id="N"></span> 年生まれです！</h2>
+          <p> （天皇名未定）<br>
+          　改元理由：今上天皇の譲位</p>
+          <a href="#" class='twitter' data-id="N" target="_blank">Tweet!</a>
+        </li>
+        <li class="box">
+          <h2>平成 <span class="result" id="H"></span> 年生まれです！</h2>
+          <p>　今上天皇の時代です<br>
+          　改元理由：今上天皇即位による</p>
+          <a href="#" class='twitter' data-id="H" target="_blank">Tweet!</a>
+        </li>
+        <li class="box">
+          <h2>昭和 <span class="result" id="S"></span> 年生まれです！</h2>
+          <p>　昭和天皇の時代です<br>
+          　改元理由：昭和天皇践祚による</p>
+          <a href="#" class="twitter" data-id="S" target="_blank">Tweet!</a>
+        </li>
+        <li class="box">
+          <h2>大正 <span class="result" id="T"></span> 年生まれです！</h2>
+          <p>　大正天皇の時代です<br>
+          　改元理由：大正天皇践祚による</p>
+          <a href="#" class="twitter" data-id="T" target="_blank">Tweet!</a>
+        </li>
+        <li class="box">
+          <h2>明治 <span class="result" id="M"></span> 年生まれです！</h2>
+          <p>　明治天皇の時代です<br>
+          　改元理由：明治天皇践祚による</p>
+          <a href="#" class="twitter" data-id="M" target="_blank">Tweet!</a>
+        </li>
+      </ul>
+
+      <h3>※当サイトの情報に誤りがある場合があります。<br>ご了承お願いいたします。</h3>
+
+    </main>
+
+  </body>
+
+  <script src="js/main.js" charset="utf-8"></script>
+  <script src="js/json.js" charset="utf-8"></script>
+</html>
