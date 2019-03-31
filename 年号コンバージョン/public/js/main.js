@@ -30,7 +30,7 @@
 
       tweetUrl = 'https://twitter.com/intent/tweet?text=' +
       encodeURIComponent(
-      '私は' + nengo) + '&hashtags=年号コンバーター';
+      '私は' + nengo + 'https://conversion-e6b5e.firebaseapp.com/') + '&hashtags=年号コンバーター';
 
       $('li:nth-of-type(' + y + ') a').attr('href',tweetUrl);
     }
