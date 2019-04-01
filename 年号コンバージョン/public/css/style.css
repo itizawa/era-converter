@@ -9,7 +9,7 @@ header{
   box-shadow: 4px 4px 6px gray;
 }
 body{
-  text-align: center;
+  text-align:center;
   color: rgb(79, 79, 79);
   background-image: url(../img/bgstr.jpeg);
 }
@@ -34,10 +34,15 @@ header p{
   background: #47ABF4;
 }
 
-h3{
-  margin: 50px;
-  line-height: 40px;
+
+
+
+
+
+h4{
   font-size: 30px;
+  text-align: center;
+  margin: 20px 0px;
 }
 
 

@@ -30,16 +30,10 @@
 
       tweetUrl = 'https://twitter.com/intent/tweet?text=' +
       encodeURIComponent(
-      '私は' + nengo + 'https://conversion-e6b5e.firebaseapp.com/') + '&hashtags=年号コンバーター';
+      '私は' + nengo + ' 　https://conversion-e6b5e.firebaseapp.com/') + '&hashtags=年号コンバーター';
 
       $('li:nth-of-type(' + y + ') a').attr('href',tweetUrl);
     }
-
-
-
-
-    // console.log($('li:nth-of-type(number) a').attr('href',tweetUrl));
-
   }
 
   $('.twitter').click(function(){
@@ -52,7 +46,7 @@
 
     tweetUrl = 'https://twitter.com/intent/tweet?text=' +
     encodeURIComponent(
-    '私は') + '&hashtags=年号コンバーター';
+    '私は') + '&hashtags=元号コンバーター';
 
     $('this').attr('href',tweetUrl);
 
@@ -81,7 +75,6 @@
 
     for (var i = 0; i < 3; i++) {
       var random = Math.floor( Math.random() * json.length );
-      console.log(random);
       add_rundom(random);
     }
 
