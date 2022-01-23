@@ -15,7 +15,7 @@ a {
   box-sizing: border-box;
 }
 
-header{
+header {
   width: 100%;
   background: #000080;
   height: auto;
@@ -23,48 +23,40 @@ header{
   text-align: center;
   box-shadow: 4px 4px 6px gray;
 }
-body{
-  text-align:center;
+body {
+  text-align: center;
   color: rgb(79, 79, 79);
 }
 
-main{
+main {
   padding-top: 70px;
 }
 
-h1{
+h1 {
   font-size: 80px;
   line-height: 2em;
   font-weight: bold;
-
 }
 
-p{
+p {
   font-size: 40px;
   line-height: 1.5em;
 }
 
-header p{
-  background: #47ABF4;
+header p {
+  background: #47abf4;
 }
 
-
-
-
-
-
-h4{
+h4 {
   font-size: 30px;
   text-align: center;
   margin: 20px 0px;
 }
 
-
-
-#show_result{
+#show_result {
   width: 60%;
   height: 80px;
-  background-color:#47ABF4;
+  background-color: #47abf4;
   border-radius: 10px;
   border: 3px solid;
   text-align: center;
@@ -72,29 +64,27 @@ h4{
   margin: auto;
 }
 
-#show_result p{
+#show_result p {
   line-height: 2em;
   color: white;
 }
 
-
-.chose{
+.chose {
   margin: 40px auto;
   text-align: center;
   position: relative;
 }
 
-.age{
+.age {
   font-size: 120px;
   font: rgba(0, 0, 0, 0.61);
   position: absolute;
   right: 20%;
   top: 50%;
   transform: translateY(-50%);
-
 }
 
-input{
+input {
   width: 80%;
   height: 200px;
   font-size: 120px;
@@ -104,26 +94,26 @@ input{
   position: relative;
 }
 
-ul{
+ul {
   margin-top: 20px;
 }
 
-ul p{
+ul p {
   font-size: 40px;
   margin-top: 20px;
   text-align: left;
 }
 
-.box{
+.box {
   margin: 0 auto;
   display: block;
-  height:300px;
+  height: 300px;
   width: 90%;
   border-bottom: 1px solid rgb(79, 79, 79);
   position: relative;
 }
 
-h2{
+h2 {
   font-size: 60px;
   line-height: 100px;
   font-weight: bold;
@@ -132,20 +122,30 @@ h2{
 
 /* rainbow */
 
-.result{
+.result {
   /* フォントサイズなどを任意で指定する */
   font: bold 1.4em / 1 Verdana, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 
   /* 背景グラデーションを指定・幅を 200% にしておく */
-  background: linear-gradient(to right, #f00 0%, #f80 14.28%, #dd0 28.56%, #0d0 42.85%, #0dd 57.14%, #00f 71.42%, #e0e 85.71%, #f00 100%) 0% center / 200% auto;
+  background: linear-gradient(
+      to right,
+      #f00 0%,
+      #f80 14.28%,
+      #dd0 28.56%,
+      #0d0 42.85%,
+      #0dd 57.14%,
+      #00f 71.42%,
+      #e0e 85.71%,
+      #f00 100%
+    )
+    0% center / 200% auto;
 
   /* 背景画像を文字でマスクする */
-          background-clip: text;
+  background-clip: text;
   -webkit-background-clip: text;
 
   /* 文字色を透明にできればよく color: transparent でも color: rgba(0, 0, 0, 0) でも可 */
-          text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
 
   /* アニメーション指定 */
@@ -153,13 +153,15 @@ h2{
 }
 
 @keyframes result {
-  to { background-position-x: 200%; }
+  to {
+    background-position-x: 200%;
+  }
 }
 
 /* tweet */
 .twitter {
-  background-color: #47ABF4;
-  box-shadow: 0 4px 0 #0078BD;
+  background-color: #47abf4;
+  box-shadow: 0 4px 0 #0078bd;
 
   display: inline;
   position: absolute;
@@ -173,17 +175,17 @@ h2{
   color: white;
   border-radius: 5px;
   padding: 14px 80px;
-  border: 1px solid ;
+  border: 1px solid;
 }
 .twitter:active {
-	box-shadow: 0 2px 0 #47ABF4;
+  box-shadow: 0 2px 0 #47abf4;
   position: absolute;
   right: 0%;
   bottom: 43%;
   border: 1px solid;
 }
 .twitter:hover {
-  background-color: #1397D8;
+  background-color: #1397d8;
   position: absolute;
   right: 0%;
   bottom: 43%;
