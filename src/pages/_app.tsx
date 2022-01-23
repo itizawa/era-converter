@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="年号コンバーター" />
         <meta property="og:description" content="年号を入力すると生まれ年の変換をしてくれます" />
-        <meta property="og:url" content="https://conversion-e6b5e.firebaseapp.com/" />
+        <meta property="og:url" content="https://converter-of-era.vercel.app/" />
         <meta property="og:image" content="/og.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@itizawa_pen" />
