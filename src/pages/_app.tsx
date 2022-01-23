@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <title>元号コンバーター</title>
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
