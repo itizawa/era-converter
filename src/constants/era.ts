@@ -1,4 +1,4 @@
-var json = [
+export const json = [
   {
     age: '慶応',
     name: '孝明天皇',
