@@ -32,13 +32,15 @@ const Home: NextPage = () => {
     <body>
       <Header />
 
-      <main style={{ maxWidth: '600px', margin: '20px auto' }}>
+      <main style={{ maxWidth: '600px', margin: '20px auto', padding: '8px' }}>
         <p>あなたの生年月日を入力してください</p>
 
         <div style={{ textAlign: 'center', margin: '20px auto' }}>
           <StyledInput className="target" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
         </div>
-        <button onClick={handleClickConversionButton}>Conversion!!</button>
+        <div style={{ textAlign: 'center', margin: '20px 0px' }}>
+          <button onClick={handleClickConversionButton}>Conversion!!</button>
+        </div>
         {showResult && (
           <ul>
             <li className="box">
@@ -120,8 +122,8 @@ const Home: NextPage = () => {
 };
 
 const StyledInput = styled.input`
-  height: 60px;
-  font-size: 40px;
+  height: 48px;
+  font-size: 32px;
   border-radius: 5px;
   text-align: right;
 `;
