@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
+import styled from 'styled-components';
 import { Header } from '~/components';
 import { TweetButton } from '~/components/TweetButton/TweetButton';
 // import { getYear } from 'date-fns';
@@ -34,8 +35,8 @@ const Home: NextPage = () => {
       <main style={{ maxWidth: '600px', margin: '20px auto' }}>
         <p>あなたの生年月日を入力してください</p>
 
-        <div className="chose">
-          <input className="target" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
+        <div style={{ textAlign: 'center', margin: '20px auto' }}>
+          <StyledInput className="target" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
         </div>
         <button onClick={handleClickConversionButton}>Conversion!!</button>
         {showResult && (
@@ -117,5 +118,12 @@ const Home: NextPage = () => {
     </body>
   );
 };
+
+const StyledInput = styled.input`
+  height: 60px;
+  font-size: 40px;
+  border-radius: 5px;
+  text-align: right;
+`;
 
 export default Home;
