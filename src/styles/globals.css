@@ -15,14 +15,6 @@ a {
   box-sizing: border-box;
 }
 
-header {
-  width: 100%;
-  background: #000080;
-  height: auto;
-  color: white;
-  text-align: center;
-  box-shadow: 4px 4px 6px gray;
-}
 body {
   text-align: center;
   color: rgb(79, 79, 79);
@@ -30,10 +22,6 @@ body {
 
 main {
   padding-top: 70px;
-}
-
-header p {
-  background: #47abf4;
 }
 
 h4 {
