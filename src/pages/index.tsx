@@ -1,25 +1,42 @@
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
+// import { getYear } from 'date-fns';
 
 const Home: NextPage = () => {
   const [showResult, setShowResult] = useState(false);
+  const [birthDate, setBirthDate] = useState<string>();
 
   const handleClickConversionButton = useCallback(() => {
-    setShowResult(true);
+    setShowResult((prev) => !prev);
   }, []);
 
+  // const calculateEra = useCallback((age: number) => {
+  //   if (date[0] > age) {
+  //     return date[0] - age + 1;
+  //   }
+  //   if (date[0] == age) {
+  //     if (date[0] == 2019) {
+  //       if (date[1] < 5) {
+  //         return '0 ';
+  //       }
+  //     }
+  //     return '元 ';
+  //   }
+  //   return date[0] - age;
+  // }, []);
+
   return (
-    <body style={{ maxWidth: '600px' }}>
+    <body>
       <header>
-        <h1>元号コンバーター</h1>
+        <h1 style={{ margin: '0 auto' }}>元号コンバーター</h1>
         <p>あなたは明治〇〇年生まれ！？</p>
       </header>
 
-      <main>
+      <main style={{ maxWidth: '600px', margin: 'auto' }}>
         <p>あなたの生年月日を入力してください</p>
 
         <div className="chose">
-          <input className="target" type="date" value="2000-01-01" />
+          <input className="target" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
         </div>
         <button onClick={handleClickConversionButton}>Conversion!!</button>
         {showResult && (
@@ -29,7 +46,6 @@ const Home: NextPage = () => {
                 令和 <span className="result" id="N"></span> 年生まれです！
               </h2>
               <p>
-                {' '}
                 （天皇名未定）
                 <br />
                 改元理由：今上天皇の譲位
@@ -93,10 +109,7 @@ const Home: NextPage = () => {
           </ul>
         )}
 
-        <p>
-          <br />
-          直近の元号と江戸時代以前の元号が<span style={{ color: 'red' }}>3つ</span>表示されます!
-        </p>
+        <p>直近の元号に変換したものが表示されます!</p>
 
         <h4>
           ※当サイトの情報に誤りがある場合があります。
