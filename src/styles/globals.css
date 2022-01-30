@@ -133,37 +133,3 @@ h2 {
     background-position-x: 200%;
   }
 }
-
-/* tweet */
-.twitter {
-  background-color: #47abf4;
-  box-shadow: 0 4px 0 #0078bd;
-
-  display: inline;
-  position: absolute;
-  right: 0%;
-  bottom: 43%;
-  font-family: Arial;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  border-radius: 5px;
-  padding: 14px 80px;
-  border: 1px solid;
-}
-.twitter:active {
-  box-shadow: 0 2px 0 #47abf4;
-  position: absolute;
-  right: 0%;
-  bottom: 43%;
-  border: 1px solid;
-}
-.twitter:hover {
-  background-color: #1397d8;
-  position: absolute;
-  right: 0%;
-  bottom: 43%;
-  border: 1px solid;
-}
