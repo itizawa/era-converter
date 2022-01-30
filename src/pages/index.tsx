@@ -31,7 +31,7 @@ const Home: NextPage = () => {
     <body>
       <Header />
 
-      <main style={{ maxWidth: '600px', margin: 'auto' }}>
+      <main style={{ maxWidth: '600px', margin: '20px auto' }}>
         <p>あなたの生年月日を入力してください</p>
 
         <div className="chose">

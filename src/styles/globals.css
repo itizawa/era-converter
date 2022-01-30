@@ -15,10 +15,6 @@ a {
   box-sizing: border-box;
 }
 
-main {
-  padding-top: 70px;
-}
-
 #show_result {
   width: 60%;
   height: 80px;
