@@ -32,17 +32,6 @@ main {
   padding-top: 70px;
 }
 
-h1 {
-  font-size: 80px;
-  line-height: 2em;
-  font-weight: bold;
-}
-
-p {
-  font-size: 40px;
-  line-height: 1.5em;
-}
-
 header p {
   background: #47abf4;
 }
@@ -114,7 +103,6 @@ ul p {
 }
 
 h2 {
-  font-size: 60px;
   line-height: 100px;
   font-weight: bold;
   text-align: left;

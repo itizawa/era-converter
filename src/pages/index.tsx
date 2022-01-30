@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
+import { Header } from '../components';
 // import { getYear } from 'date-fns';
 
 const Home: NextPage = () => {
@@ -27,10 +28,7 @@ const Home: NextPage = () => {
 
   return (
     <body>
-      <header>
-        <h1 style={{ margin: '0 auto' }}>元号コンバーター</h1>
-        <p>あなたは明治〇〇年生まれ！？</p>
-      </header>
+      <Header />
 
       <main style={{ maxWidth: '600px', margin: 'auto' }}>
         <p>あなたの生年月日を入力してください</p>
