@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 import { Header } from '~/components';
+import { TweetButton } from '~/components/TweetButton/TweetButton';
 // import { getYear } from 'date-fns';
 
 const Home: NextPage = () => {
@@ -48,9 +49,7 @@ const Home: NextPage = () => {
                 <br />
                 改元理由：今上天皇の譲位
               </p>
-              <a href="#" className="twitter" data-id="N" target="_blank">
-                Tweet!
-              </a>
+              <TweetButton onClick={() => console.log('hoge')} />
             </li>
             <li className="box">
               <h2>
