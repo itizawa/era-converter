@@ -17,6 +17,7 @@ const StyledHeader = styled.header`
   background: #000080;
   color: white;
   box-shadow: 0px 2px 3px gray;
+  text-align: center;
 `;
 
 const StyledHeader1 = styled.h1`
