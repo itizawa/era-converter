@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
-import { Header } from '../components';
+import { Header } from '~/components';
 // import { getYear } from 'date-fns';
 
 const Home: NextPage = () => {
