@@ -18,10 +18,11 @@ const StyledButton = styled.button`
   font-size: 12px;
   font-weight: bold;
   color: white;
-  border-radius: 5px;
-  padding: 8px 32px;
+  border-radius: 10px;
+  padding: 12px 32px;
   border: 1px solid;
   background-color: #47abf4;
+  width: 280px;
 
   :hover {
     background-color: #1397d8;
