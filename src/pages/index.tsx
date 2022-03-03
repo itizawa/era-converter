@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <p>あなたの生年月日を入力してください</p>
 
         <div style={{ textAlign: 'center', margin: '20px auto' }}>
-          <StyledInput type="number" value={birthDate} onChange={(e) => setBirthDate(parseInt(e.target.value))} />
+          <StyledInput min={0} max={3000} type="number" value={birthDate} onChange={(e) => setBirthDate(parseInt(e.target.value))} />
         </div>
         <div style={{ textAlign: 'center', margin: '20px 0px' }}>
           <button onClick={handleClickConversionButton}>Conversion!!</button>
