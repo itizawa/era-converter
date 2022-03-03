@@ -63,9 +63,7 @@ const Home: NextPage = () => {
                 <br />
                 改元理由：今上天皇即位による
               </p>
-              <a href="#" className="twitter" data-id="H" target="_blank">
-                Tweet!
-              </a>
+              <TweetButton onClick={() => console.log('hoge')} />
             </li>
             <li className="box">
               <h2>
@@ -76,9 +74,7 @@ const Home: NextPage = () => {
                 <br />
                 改元理由：昭和天皇践祚による
               </p>
-              <a href="#" className="twitter" data-id="S" target="_blank">
-                Tweet!
-              </a>
+              <TweetButton onClick={() => console.log('hoge')} />
             </li>
             <li className="box">
               <h2>
@@ -89,9 +85,7 @@ const Home: NextPage = () => {
                 <br />
                 改元理由：大正天皇践祚による
               </p>
-              <a href="#" className="twitter" data-id="T" target="_blank">
-                Tweet!
-              </a>
+              <TweetButton onClick={() => console.log('hoge')} />
             </li>
             <li className="box">
               <h2>
@@ -102,9 +96,7 @@ const Home: NextPage = () => {
                 <br />
                 改元理由：明治天皇践祚による
               </p>
-              <a href="#" className="twitter" data-id="M" target="_blank">
-                Tweet!
-              </a>
+              <TweetButton onClick={() => console.log('hoge')} />
             </li>
           </ul>
         )}
