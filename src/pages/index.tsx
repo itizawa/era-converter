@@ -2,30 +2,18 @@ import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { EraCard, Header } from '~/components';
-// import { getYear } from 'date-fns';
 
 const Home: NextPage = () => {
   const [showResult, setShowResult] = useState(false);
-  const [birthDate, setBirthDate] = useState<string>();
+  const [birthDate, setBirthDate] = useState<number>(2000);
 
   const handleClickConversionButton = useCallback(() => {
     setShowResult((prev) => !prev);
   }, []);
 
-  // const calculateEra = useCallback((age: number) => {
-  //   if (date[0] > age) {
-  //     return date[0] - age + 1;
-  //   }
-  //   if (date[0] == age) {
-  //     if (date[0] == 2019) {
-  //       if (date[1] < 5) {
-  //         return '0 ';
-  //       }
-  //     }
-  //     return '元 ';
-  //   }
-  //   return date[0] - age;
-  // }, []);
+  const calculateEra = useCallback((birthDate: number, age: number) => {
+    return birthDate - age;
+  }, []);
 
   return (
     <body style={{ minHeight: '100vh', backgroundColor: '#eee' }}>
@@ -35,18 +23,18 @@ const Home: NextPage = () => {
         <p>あなたの生年月日を入力してください</p>
 
         <div style={{ textAlign: 'center', margin: '20px auto' }}>
-          <StyledInput className="target" type="date" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
+          <StyledInput type="number" value={birthDate} onChange={(e) => setBirthDate(parseInt(e.target.value))} />
         </div>
         <div style={{ textAlign: 'center', margin: '20px 0px' }}>
           <button onClick={handleClickConversionButton}>Conversion!!</button>
         </div>
         {showResult && (
           <div style={{ display: 'flex', flexDirection: 'column', gridRowGap: '24px' }}>
-            <EraCard era="令和" years={1} reason="今上天皇の譲位" />
-            <EraCard era="平成" years={1} name="今上天皇" reason="今上天皇即位による" />
-            <EraCard era="昭和" years={1} name="昭和天皇" reason="昭和天皇践祚による" />
-            <EraCard era="大正" years={1} name="大正天皇" reason="大正天皇践祚による" />
-            <EraCard era="明治" years={1} name="明治天皇" reason="明治天皇践祚による" />
+            <EraCard era="令和" years={calculateEra(birthDate, 2019)} reason="今上天皇の譲位" />
+            <EraCard era="平成" years={calculateEra(birthDate, 1989)} name="今上天皇" reason="今上天皇即位による" />
+            <EraCard era="昭和" years={calculateEra(birthDate, 1926)} name="昭和天皇" reason="昭和天皇践祚による" />
+            <EraCard era="大正" years={calculateEra(birthDate, 1912)} name="大正天皇" reason="大正天皇践祚による" />
+            <EraCard era="明治" years={calculateEra(birthDate, 1868)} name="明治天皇" reason="明治天皇践祚による" />
           </div>
         )}
 
@@ -66,7 +54,8 @@ const StyledInput = styled.input`
   height: 48px;
   font-size: 32px;
   border-radius: 5px;
-  text-align: right;
+  text-align: center;
+  width: 120px;
 `;
 
 export default Home;
