@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { Header } from '~/components';
+import { EraCard, Header } from '~/components';
 import { TweetButton } from '~/components/TweetButton/TweetButton';
 // import { getYear } from 'date-fns';
 
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
   // }, []);
 
   return (
-    <body>
+    <body style={{ minHeight: '100vh', backgroundColor: '#eee' }}>
       <Header />
 
       <main style={{ maxWidth: '600px', margin: '20px auto', padding: '8px' }}>
@@ -42,7 +42,8 @@ const Home: NextPage = () => {
           <button onClick={handleClickConversionButton}>Conversion!!</button>
         </div>
         {showResult && (
-          <ul>
+          <>
+            <EraCard era="令和" years={1} reason="今上天皇の譲位" />
             <li className="box">
               <h2>
                 令和 <span className="result" id="N"></span> 年生まれです！
@@ -98,7 +99,7 @@ const Home: NextPage = () => {
               </p>
               <TweetButton onClick={() => console.log('hoge')} />
             </li>
-          </ul>
+          </>
         )}
 
         <p>直近の元号に変換したものが表示されます!</p>
