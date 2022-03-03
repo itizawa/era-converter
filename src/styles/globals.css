@@ -31,16 +31,6 @@ a {
   color: white;
 }
 
-ul {
-  margin-top: 20px;
-}
-
-ul p {
-  font-size: 40px;
-  margin-top: 20px;
-  text-align: left;
-}
-
 .box {
   margin: 0 auto;
   display: block;
@@ -48,48 +38,4 @@ ul p {
   width: 90%;
   border-bottom: 1px solid rgb(79, 79, 79);
   position: relative;
-}
-
-h2 {
-  line-height: 100px;
-  font-weight: bold;
-  text-align: left;
-}
-
-/* rainbow */
-
-.result {
-  /* フォントサイズなどを任意で指定する */
-  font: bold 1.4em / 1 Verdana, Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-
-  /* 背景グラデーションを指定・幅を 200% にしておく */
-  background: linear-gradient(
-      to right,
-      #f00 0%,
-      #f80 14.28%,
-      #dd0 28.56%,
-      #0d0 42.85%,
-      #0dd 57.14%,
-      #00f 71.42%,
-      #e0e 85.71%,
-      #f00 100%
-    )
-    0% center / 200% auto;
-
-  /* 背景画像を文字でマスクする */
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  /* 文字色を透明にできればよく color: transparent でも color: rgba(0, 0, 0, 0) でも可 */
-  -webkit-text-fill-color: transparent;
-
-  /* アニメーション指定 */
-  animation: result 4s linear infinite;
-}
-
-@keyframes result {
-  to {
-    background-position-x: 200%;
-  }
 }
