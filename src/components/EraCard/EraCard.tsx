@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { VFC } from 'react';
 import styled from 'styled-components';
 import { TweetButton } from '..';
@@ -10,13 +11,20 @@ type Props = {
 };
 
 export const EraCard: VFC<Props> = ({ era, years, name, reason }) => {
+  const router = useRouter();
+  const tweetUrl =
+    `https://twitter.com/intent/tweet?text=私は ${era}${years}年 生まれです https://converter-of-era.vercel.app` +
+    '&hashtags=元号コンバーター';
+
   return (
     <StyledDiv>
-      <span style={{ fontWeight: 'bold' }}>{era}</span> <StyledYearsText>{years}</StyledYearsText> 年生まれです！
+      <span style={{ fontWeight: 'bold' }}>{era}</span>
+      <StyledYearsText>{years}</StyledYearsText>
+      年生まれです！
       <p style={{ marginTop: '20px', textAlign: 'center' }}>{name ? `${name}の時代です` : '（天皇名未定）'}</p>
       <p style={{ marginTop: '8px', textAlign: 'center' }}>改元理由：{reason}</p>
       <div style={{ marginTop: '12px', textAlign: 'center' }}>
-        <TweetButton onClick={() => console.log('hoge')} />
+        <TweetButton onClick={() => router.push(tweetUrl)} />
       </div>
     </StyledDiv>
   );
