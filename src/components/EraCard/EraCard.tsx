@@ -18,9 +18,7 @@ export const EraCard: VFC<Props> = ({ era, years, name, reason }) => {
 
   return (
     <StyledDiv>
-      <span style={{ fontWeight: 'bold' }}>{era}</span>
-      <StyledYearsText>{years}</StyledYearsText>
-      年生まれです！
+      <span style={{ fontWeight: 'bold' }}>{era}</span> <StyledYearsText>{years}</StyledYearsText> 年生まれです！
       <p style={{ marginTop: '20px', textAlign: 'center' }}>{name ? `${name}の時代です` : '（天皇名未定）'}</p>
       <p style={{ marginTop: '8px', textAlign: 'center' }}>改元理由：{reason}</p>
       <div style={{ marginTop: '12px', textAlign: 'center' }}>
