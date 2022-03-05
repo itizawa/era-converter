@@ -39,8 +39,10 @@ const Home: NextPage = () => {
           <StyledInput min={0} max={3000} type="number" value={birthDate} onChange={(e) => setBirthDate(parseInt(e.target.value))} />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gridRowGap: '24px' }}>
-          <EraCard era={{ age: '平成', years: calculateEra(birthDate, 2019), reason: '今上天皇の譲位' }} />
-          <EraCard era={{ age: '令和', years: calculateEra(birthDate, 1989), name: '今上天皇', reason: '今上天皇の譲位' }} />
+          <EraCard
+            era={{ age: '令和', years: calculateEra(birthDate, 2019), name: '今上天皇', reason: '明仁から皇太子徳仁親王への譲位による' }}
+          />
+          <EraCard era={{ age: '平成', years: calculateEra(birthDate, 1989), name: '明仁上皇', reason: '皇太子明仁親王の即位による' }} />
           <EraCard era={{ age: '昭和', years: calculateEra(birthDate, 1926), name: '昭和天皇', reason: '昭和天皇践祚による' }} />
           <EraCard era={{ age: '大正', years: calculateEra(birthDate, 1912), name: '大正天皇', reason: '大正天皇践祚による' }} />
           <EraCard era={{ age: '明治', years: calculateEra(birthDate, 1868), name: '明治天皇', reason: '明治天皇践祚による' }} />
