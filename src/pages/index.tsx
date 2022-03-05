@@ -1,102 +1,73 @@
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
+import styled from 'styled-components';
+import { EraCard, Header, MoreButton } from '~/components';
+import { eras } from '~/constants/eras';
+import { Era } from '~/interfaces/era';
 
 const Home: NextPage = () => {
   const [showResult, setShowResult] = useState(false);
+  const [birthDate, setBirthDate] = useState<number>(2000);
+  const [additionalEras, setAdditionalEras] = useState<Era[]>([]);
 
   const handleClickConversionButton = useCallback(() => {
-    setShowResult(true);
+    const newEras = [
+      eras[Math.floor(Math.random() * eras.length)],
+      eras[Math.floor(Math.random() * eras.length)],
+      eras[Math.floor(Math.random() * eras.length)],
+      eras[Math.floor(Math.random() * eras.length)],
+      eras[Math.floor(Math.random() * eras.length)],
+    ].sort((a, b) => {
+      return b.years - a.years;
+    });
+    setAdditionalEras(newEras);
+    setShowResult((prev) => !prev);
+  }, []);
+
+  const calculateEra = useCallback((birthDate: number, age: number) => {
+    return birthDate - age;
   }, []);
 
   return (
-    <body style={{ maxWidth: '600px' }}>
-      <header>
-        <h1>元号コンバーター</h1>
-        <p>あなたは明治〇〇年生まれ！？</p>
-      </header>
+    <body style={{ minHeight: '100vh', backgroundColor: '#eee' }}>
+      <Header />
 
-      <main>
+      <main style={{ maxWidth: '600px', margin: '20px auto', padding: '8px' }}>
         <p>あなたの生年月日を入力してください</p>
 
-        <div className="chose">
-          <input className="target" type="date" value="2000-01-01" />
+        <div style={{ textAlign: 'center', margin: '20px auto' }}>
+          <StyledInput min={0} max={3000} type="number" value={birthDate} onChange={(e) => setBirthDate(parseInt(e.target.value))} />
         </div>
-        <button onClick={handleClickConversionButton}>Conversion!!</button>
+        <div style={{ display: 'flex', flexDirection: 'column', gridRowGap: '24px' }}>
+          <EraCard era={{ age: '平成', years: calculateEra(birthDate, 2019), reason: '今上天皇の譲位' }} />
+          <EraCard era={{ age: '令和', years: calculateEra(birthDate, 1989), name: '今上天皇', reason: '今上天皇の譲位' }} />
+          <EraCard era={{ age: '昭和', years: calculateEra(birthDate, 1926), name: '昭和天皇', reason: '昭和天皇践祚による' }} />
+          <EraCard era={{ age: '大正', years: calculateEra(birthDate, 1912), name: '大正天皇', reason: '大正天皇践祚による' }} />
+          <EraCard era={{ age: '明治', years: calculateEra(birthDate, 1868), name: '明治天皇', reason: '明治天皇践祚による' }} />
+        </div>
+
+        <div style={{ textAlign: 'center', margin: '50px 0px' }}>
+          <MoreButton onClick={handleClickConversionButton}>{showResult ? '戻る' : 'もっと見る'}</MoreButton>
+        </div>
         {showResult && (
-          <ul>
-            <li className="box">
-              <h2>
-                令和 <span className="result" id="N"></span> 年生まれです！
-              </h2>
-              <p>
-                {' '}
-                （天皇名未定）
-                <br />
-                改元理由：今上天皇の譲位
-              </p>
-              <a href="#" className="twitter" data-id="N" target="_blank">
-                Tweet!
-              </a>
-            </li>
-            <li className="box">
-              <h2>
-                平成 <span className="result" id="H"></span> 年生まれです！
-              </h2>
-              <p>
-                今上天皇の時代です
-                <br />
-                改元理由：今上天皇即位による
-              </p>
-              <a href="#" className="twitter" data-id="H" target="_blank">
-                Tweet!
-              </a>
-            </li>
-            <li className="box">
-              <h2>
-                昭和 <span className="result" id="S"></span> 年生まれです！
-              </h2>
-              <p>
-                昭和天皇の時代です
-                <br />
-                改元理由：昭和天皇践祚による
-              </p>
-              <a href="#" className="twitter" data-id="S" target="_blank">
-                Tweet!
-              </a>
-            </li>
-            <li className="box">
-              <h2>
-                大正 <span className="result" id="T"></span> 年生まれです！
-              </h2>
-              <p>
-                大正天皇の時代です
-                <br />
-                改元理由：大正天皇践祚による
-              </p>
-              <a href="#" className="twitter" data-id="T" target="_blank">
-                Tweet!
-              </a>
-            </li>
-            <li className="box">
-              <h2>
-                明治 <span className="result" id="M"></span> 年生まれです！
-              </h2>
-              <p>
-                明治天皇の時代です
-                <br />
-                改元理由：明治天皇践祚による
-              </p>
-              <a href="#" className="twitter" data-id="M" target="_blank">
-                Tweet!
-              </a>
-            </li>
-          </ul>
+          <div style={{ display: 'flex', flexDirection: 'column', gridRowGap: '24px' }}>
+            {additionalEras.map((additionalEra, index) => {
+              return (
+                <EraCard
+                  key={index}
+                  era={{
+                    age: additionalEra.age,
+                    years: calculateEra(birthDate, additionalEra.years),
+                    name: additionalEra.name,
+                    reason: additionalEra.reason,
+                  }}
+                />
+              );
+            })}
+          </div>
         )}
 
-        <p>
-          <br />
-          直近の元号と江戸時代以前の元号が<span style={{ color: 'red' }}>3つ</span>表示されます!
-        </p>
+        <p style={{ marginTop: '32px' }}>直近の元号に変換したものが表示されます!</p>
 
         <h4>
           ※当サイトの情報に誤りがある場合があります。
@@ -107,5 +78,13 @@ const Home: NextPage = () => {
     </body>
   );
 };
+
+const StyledInput = styled.input`
+  height: 48px;
+  font-size: 32px;
+  border-radius: 5px;
+  text-align: center;
+  width: 120px;
+`;
 
 export default Home;
