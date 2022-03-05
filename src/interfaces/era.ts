@@ -1,6 +1,6 @@
 export interface Era {
   age: string;
   years: number;
-  name?: string;
+  name: string;
   reason: string;
 }

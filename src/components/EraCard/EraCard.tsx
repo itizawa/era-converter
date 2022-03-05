@@ -19,7 +19,7 @@ export const EraCard: VFC<Props> = ({ era }) => {
   return (
     <StyledDiv>
       <span style={{ fontWeight: 'bold' }}>{age}</span> <StyledYearsText>{years}</StyledYearsText> 年生まれです！
-      <p style={{ marginTop: '20px', textAlign: 'center' }}>{name ? `${name}の時代です` : '（天皇名未定）'}</p>
+      <p style={{ marginTop: '20px', textAlign: 'center' }}>{name}</p>
       <p style={{ marginTop: '8px', textAlign: 'center' }}>改元理由：{reason}</p>
       <div style={{ marginTop: '12px', textAlign: 'center' }}>
         <TweetButton onClick={() => router.push(tweetUrl)} />
