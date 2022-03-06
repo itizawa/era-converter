@@ -1,6 +1,6 @@
 {
   "name": "converter-of-era",
-  "version":"1.0.3",
+  "version":"1.0.4",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
