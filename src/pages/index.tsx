@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       return b.years - a.years;
     });
     setAdditionalEras(newEras);
-    setShowResult((prev) => !prev);
+    setShowResult(true);
   }, []);
 
   const calculateEra = useCallback((birthDate: number, age: number) => {
@@ -49,7 +49,7 @@ const Home: NextPage = () => {
         </div>
 
         <div style={{ textAlign: 'center', margin: '50px 0px' }}>
-          <MoreButton onClick={handleClickConversionButton}>{showResult ? '戻る' : 'もっと見る'}</MoreButton>
+          <MoreButton onClick={handleClickConversionButton}>{showResult ? '更新' : 'もっと見る'}</MoreButton>
         </div>
         {showResult && (
           <div style={{ display: 'flex', flexDirection: 'column', gridRowGap: '24px' }}>
