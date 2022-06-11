@@ -25,7 +25,8 @@ const Home: NextPage = () => {
   }, []);
 
   const calculateEra = useCallback((birthDate: number, age: number) => {
-    return birthDate - age;
+    // 元年を考慮して1足す
+    return birthDate - age + 1;
   }, []);
 
   return (
