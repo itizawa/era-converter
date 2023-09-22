@@ -16,8 +16,8 @@
     "styled-components": "6.0.8"
   },
   "devDependencies": {
-    "@types/node": "18.17.16",
-    "@types/react": "18.2.21",
+    "@types/node": "18.17.18",
+    "@types/react": "18.2.22",
     "@types/styled-components": "5.1.27",
     "@typescript-eslint/eslint-plugin": "6.7.0",
     "eslint": "8.49.0",
